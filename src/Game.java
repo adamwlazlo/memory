@@ -22,7 +22,6 @@ public class Game {
             numberOfWords = 8;
             round = 15;
         }
-        ;
     }
 
     private void InitializeGame() {
@@ -46,8 +45,7 @@ public class Game {
         Scanner sc = new Scanner(System.in);
         System.out.print("Chose level:\n1 - four word; 10 rounds;\n2 - eight words; 15 rounds\n\n");
 
-        int level = sc.nextInt();
-        return level;
+        return sc.nextInt();
     }
 
     public void Play() {
@@ -99,6 +97,14 @@ public class Game {
         else
             System.out.println("LOOSE!");
 
+    }
+
+    public static boolean RestartQuestion() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Do you want play again? \ny - yes;\nany other - no;\n\n");
+
+        char answer = sc.next().charAt(0);
+        return answer == 'y';
     }
 
     private void PrintGuessedWords(ArrayList<Integer> guessedRow, ArrayList<String> drawnWords) {

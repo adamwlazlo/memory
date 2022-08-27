@@ -18,7 +18,8 @@ public class Word {
     {
         try {
             wordsArray = new ArrayList<>();
-            File myObj = new File("C:\\Users\\adam\\IdeaProjects\\memory\\src\\Words.txt");
+            String path = System.getProperty("user.dir") + "\\src\\";
+            File myObj = new File(path + "Words.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 assert false;
