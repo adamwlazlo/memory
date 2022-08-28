@@ -49,6 +49,7 @@ public class Game {
     }
 
     public void Play() {
+        long startTime = System.currentTimeMillis();
         int guessedWords = 0;
         int roundNum = 0;
         InitializeGame();
@@ -92,10 +93,15 @@ public class Game {
 
             roundNum++;
         }
-        if (guessedWords == numberOfWords)
+        if (guessedWords == numberOfWords) {
             System.out.println("WIN!");
-        else
+            System.out.println("You solved the game after " + roundNum + " rounds.");
+
+        } else
             System.out.println("LOOSE!");
+
+        long stopTime = System.currentTimeMillis();
+        System.out.println("It took you " +( (stopTime - startTime) / 1000) + " seconds.");
 
     }
 
